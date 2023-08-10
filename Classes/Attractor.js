@@ -1,5 +1,7 @@
 class Attractor {
-  static radius = 10;
+  static influenceRadius = 500;
+  static killingRadius = 11;
+
   constructor(position) {
     this.position = position;
   }
@@ -9,8 +11,8 @@ class Attractor {
     ellipse(
       this.position.x,
       this.position.y,
-      Attractor.radius,
-      Attractor.radius
+      Attractor.killingRadius,
+      Attractor.killingRadius
     );
   }
 }

@@ -16,6 +16,19 @@ function setup() {
 function draw() {
   background("#1e1e1e");
 
+  if (mouseIsPressed) {
+    Attractors = [];
+    Nodes = [];
+
+    for (let i = 0; i < nAttractors; i++) {
+      Attractors.push(
+        new Attractor(createVector(random(width), random(height)))
+      );
+    }
+
+    Nodes.push(new Node(createVector(width / 2, height / 2), null));
+  }
+
   Nodes.forEach((node) => node.direction.mult(0));
 
   let parentNodes = new Set();
